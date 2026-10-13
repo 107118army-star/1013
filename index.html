@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA | 重塑每一步的極致美學 - 專為品味設計的靈魂之履</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#121212',
+                            gold: '#D4AF37',
+                            softGold: '#F4E8C1',
+                            cream: '#FAF7F2',
+                            gray: '#2C2C2C',
+                            muted: '#757575'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Noto Sans TC', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #FAF7F2;
+            color: #121212;
+        }
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+        .glass-header {
+            background: rgba(250, 247, 242, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .hover-zoom img {
+            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .hover-zoom:hover img {
+            transform: scale(1.06);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-gold selection:text-white">
+
+    <header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-stone-200/60 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-2 group">
+                <span class="font-cinzel text-2xl md:text-3xl font-bold tracking-widest text-brand-dark group-hover:text-amber-700 transition">AURA</span>
+                <span class="text-xs tracking-tighter uppercase font-semibold text-brand-gold px-1.5 py-0.5 border border-brand-gold rounded">STUDIO</span>
+            </a>
+
+            <!-- Desktop Nav Items -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="#hero" class="text-brand-dark hover:text-amber-700 transition">首頁</a>
+                <a href="#features" class="text-brand-dark hover:text-amber-700 transition">設計工藝</a>
+                <a href="#scenarios" class="text-brand-dark hover:text-amber-700 transition">穿搭靈感</a>
+                <a href="#pricing" class="text-brand-dark hover:text-amber-700 transition">系列方案</a>
+                <a href="#reviews" class="text-brand-dark hover:text-amber-700 transition">顧客評價</a>
+            </nav>
+
+            <!-- Header Action Button -->
+            <div class="hidden md:flex items-center space-x-4">
+                <button onclick="scrollToPricing()" class="px-6 py-2.5 bg-brand-dark text-white text-sm tracking-wider hover:bg-stone-800 transition rounded-full shadow-md hover:shadow-lg transform active:scale-95">
+                    立即選購
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none text-brand-dark" aria-label="Open Menu">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-900 text-white px-8 py-6 space-y-4 border-t border-stone-800">
+            <a href="#hero" class="block text-stone-300 hover:text-brand-gold py-1" onclick="toggleMenu()">首頁</a>
+            <a href="#features" class="block text-stone-300 hover:text-brand-gold py-1" onclick="toggleMenu()">設計工藝</a>
+            <a href="#scenarios" class="block text-stone-300 hover:text-brand-gold py-1" onclick="toggleMenu()">穿搭靈感</a>
+            <a href="#pricing" class="block text-stone-300 hover:text-brand-gold py-1" onclick="toggleMenu()">系列方案</a>
+            <a href="#reviews" class="block text-stone-300 hover:text-brand-gold py-1" onclick="toggleMenu()">顧客評價</a>
+            <button onclick="scrollToPricing(); toggleMenu();" class="w-full mt-4 py-3 bg-brand-gold text-brand-dark font-semibold text-center rounded-lg">
+                立即選購
+            </button>
+        </div>
+    </header>
+
+    <main class="mt-20">
+        <section id="hero" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Content -->
+                <div class="lg:col-span-6 space-y-6 text-center lg:text-left z-10">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100/80 border border-amber-300 text-amber-900 text-xs tracking-wider uppercase font-semibold">
+                        <i class="fa-solid fa-sparkles text-amber-600"></i> 2026 秋冬限量設計首發
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-brand-dark">
+                        行走的藝術品，<br>
+                        <span class="font-cinzel italic font-normal text-amber-800">Redefine Your Steps.</span>
+                    </h1>
+                    
+                    <p class="text-lg text-stone-600 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        完美融合建築結構美學與人體工學舒壓技術。AURA 專為不願對舒適度妥協的品味人士打造，為您的毎一步注入自信質感。
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#pricing" class="w-full sm:w-auto px-8 py-4 bg-brand-dark text-white rounded-full font-medium text-center shadow-xl hover:bg-stone-800 transition transform hover:-translate-y-0.5">
+                            探索限定系列 <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <a href="#features" class="w-full sm:w-auto px-8 py-4 bg-white/80 border border-stone-300 rounded-full font-medium text-center text-brand-dark hover:bg-white transition shadow-sm">
+                            瞭解設計細節
+                        </a>
+                    </div>
+
+                    <!-- Highlight Badges -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-stone-300/60 max-w-md mx-auto lg:mx-0 text-center">
+                        <div>
+                            <p class="text-2xl font-bold text-brand-dark font-cinzel">100%</p>
+                            <p class="text-xs text-stone-500 mt-1">頂級手工真皮</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-brand-dark font-cinzel">35%</p>
+                            <p class="text-xs text-stone-500 mt-1">極致減震提升</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-brand-dark font-cinzel">30 Days</p>
+                            <p class="text-xs text-stone-500 mt-1">無憂體驗試穿</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Area -->
+                <div class="lg:col-span-6 relative flex justify-center items-center">
+                    <!-- Decorative Background Circle -->
+                    <div class="absolute w-[320px] h-[320px] sm:w-[480px] sm:h-[480px] bg-gradient-to-tr from-amber-200/50 to-stone-200/50 rounded-full filter blur-2xl -z-10"></div>
+                    
+                    <div class="relative w-full max-w-md lg:max-w-none hover-zoom rounded-3xl overflow-hidden shadow-2xl border-4 border-white/80">
+                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1000&q=80" 
+                             alt="AURA Premium Designer Shoes" 
+                             class="w-full h-[450px] sm:h-[550px] object-cover rounded-2xl object-center"
+                             onerror="this.src='https://placehold.co/800x1000/2c2c2c/ffffff?text=AURA+Designer+Shoe'">
+                        
+                        <!-- Floating Glass Tag -->
+                        <div class="absolute bottom-6 left-6 right-6 p-4 glass-header rounded-2xl border border-white/60 shadow-lg flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-stone-500 font-semibold tracking-wider uppercase">主打款式</span>
+                                <h3 class="font-bold text-stone-900">AURA Horizon Minimalist</h3>
+                            </div>
+                            <span class="text-amber-800 font-bold font-cinzel text-lg">NT$ 4,880</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="features" class="py-20 bg-white border-y border-stone-200">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-xs font-bold text-amber-700 tracking-widest uppercase">Uncompromising Craftsmanship</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mt-2">不妥協的工藝，專屬腳步的極致舒適</h2>
+                    <p class="text-stone-600 mt-3 font-light">我們重新定義質感鞋款，將當代幾何線條與人體解剖學結合，兼具視覺衝擊與整天穿著的舒適度。</p>
+                </div>
+
+                <!-- Features Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="p-8 rounded-2xl bg-brand-cream border border-stone-200/80 hover:shadow-xl transition duration-300 group">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-dark text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-feather-pointed"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3">羽量級減壓大底</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">
+                            獨家研發高彈性 EVA 結構，相較傳統皮鞋減輕 40% 重量，大幅減緩漫長走動時的足部疲勞。
+                        </p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="p-8 rounded-2xl bg-brand-cream border border-stone-200/80 hover:shadow-xl transition duration-300 group">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-dark text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3">義大利頂級小牛皮</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">
+                            嚴選頭層植鞣皮革，具備優異透氣性與天然質感光澤，隨時間穿著更貼合個人腳型。
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="p-8 rounded-2xl bg-brand-cream border border-stone-200/80 hover:shadow-xl transition duration-300 group">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-dark text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-shoe-prints"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3">3D 弧面足弓支撐</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">
+                            專利記憶軟木鞋墊，精準支撐足弓結構，分散全身重量，提供如量身打造般的包覆感受。
+                        </p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="p-8 rounded-2xl bg-brand-cream border border-stone-200/80 hover:shadow-xl transition duration-300 group">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-dark text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3">建築幾何設計語彙</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">
+                            俐落的切面鞋身與極簡色彩調和，打破傳統鞋型限制，低調展現不俗的審美與獨特性。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="scenarios" class="py-20 bg-brand-cream">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <span class="text-xs font-bold text-amber-700 tracking-widest uppercase">Style In Motion</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mt-2">無論場合，皆能輕鬆掌控氣場</h2>
+                    </div>
+                    <p class="text-stone-600 text-sm md:max-w-md mt-4 md:mt-0">
+                        從高階商務會議到週末藝文展覽，一雙對的鞋能隨心轉換風格，成為您衣櫥中最百搭的核心單品。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Scenario 1 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-lg border border-stone-200 bg-white">
+                        <div class="h-80 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Urban Business Scenario" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-amber-700 font-semibold tracking-wider uppercase">SCENARIO 01</span>
+                            <h3 class="text-xl font-bold text-brand-dark mt-1 mb-2">現代商務與提案場合</h3>
+                            <p class="text-stone-600 text-sm">搭襯正裝或俐落西裝套裝，揮別傳統商務鞋的沉悶，展現專業且具設計感的自信姿態。</p>
+                        </div>
+                    </div>
+
+                    <!-- Scenario 2 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-lg border border-stone-200 bg-white">
+                        <div class="h-80 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Gallery Casual Scenario" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-amber-700 font-semibold tracking-wider uppercase">SCENARIO 02</span>
+                            <h3 class="text-xl font-bold text-brand-dark mt-1 mb-2">週末展演與藝文漫步</h3>
+                            <p class="text-stone-600 text-sm">漫步於展覽館與精品街區，輕盈舒適的軟骨架設計，讓您走上一整天依然保持優雅。</p>
+                        </div>
+                    </div>
+
+                    <!-- Scenario 3 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-lg border border-stone-200 bg-white">
+                        <div class="h-80 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Casual Evening Scenario" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs text-amber-700 font-semibold tracking-wider uppercase">SCENARIO 03</span>
+                            <h3 class="text-xl font-bold text-brand-dark mt-1 mb-2">極簡街頭與日常社交</h3>
+                            <p class="text-stone-600 text-sm">隨意搭配寬版九分褲或羊毛長裙，簡單俐落即可勾勒出強烈的個人視覺印象。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="py-20 bg-white border-t border-stone-200">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-xs font-bold text-amber-700 tracking-widest uppercase">Transparent Pricing</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mt-2">尋找最適合您的品味提案</h2>
+                    <p class="text-stone-600 mt-3 font-light">全系列商品皆享免費送貨、30 天無憂尺寸更換與 1 年品牌原廠保固。</p>
+                </div>
+
+                <!-- Limited Time Banner -->
+                <div class="mb-12 bg-stone-900 text-white rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between shadow-xl">
+                    <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                        <div class="w-12 h-12 rounded-full bg-amber-500 text-stone-900 flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-amber-300">限時新品推廣優惠！輸入折扣碼「AURA2026」</h4>
+                            <p class="text-stone-400 text-sm">前 100 名下單即贈限量專屬皮革保養禮盒（價值 NT$ 1,200）</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-xs text-stone-400 block mb-1">優惠倒數結束</span>
+                        <div class="text-amber-400 font-mono font-bold text-xl tracking-widest" id="countdown">23 : 59 : 45</div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Pricing Plan 1 -->
+                    <div class="border border-stone-200 rounded-3xl p-8 bg-brand-cream/50 hover:border-stone-400 transition flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-brand-dark">經典入門系列</h3>
+                            <p class="text-xs text-stone-500 mt-1">簡約百搭・質感日常生活</p>
+                            <div class="my-6">
+                                <span class="text-3xl font-bold font-cinzel text-brand-dark">NT$ 3,980</span>
+                                <span class="text-stone-400 text-sm line-through ml-2">NT$ 4,800</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-stone-600 mb-8">
+                                <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> 義大利進口頭層皮革</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> 高彈性輕量大底</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> 免費配送與退換貨</li>
+                                <li class="flex items-center text-stone-400"><i class="fa-solid fa-xmark mr-3 text-stone-300"></i> 客製化專屬刻字</li>
+                            </ul>
+                        </div>
+                        <button onclick="handlePurchase('經典入門系列')" class="w-full py-3 border-2 border-brand-dark text-brand-dark font-medium rounded-full hover:bg-brand-dark hover:text-white transition">
+                            選擇此方案
+                        </button>
+                    </div>
+
+                    <!-- Pricing Plan 2 (Highlighted) -->
+                    <div class="border-2 border-amber-600 rounded-3xl p-8 bg-white shadow-2xl relative flex flex-col justify-between transform md:-translate-y-2">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-600 text-white text-xs tracking-wider uppercase font-bold py-1 px-4 rounded-full">
+                            最受歡迎主打款
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-brand-dark">旗艦極致系列</h3>
+                            <p class="text-xs text-stone-500 mt-1">極致減震・建築語彙完美體現</p>
+                            <div class="my-6">
+                                <span class="text-4xl font-bold font-cinzel text-brand-dark">NT$ 4,880</span>
+                                <span class="text-stone-400 text-sm line-through ml-2">NT$ 5,800</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-stone-600 mb-8">
+                                <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> 義大利頂級小牛皮</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> 3D 弧面足弓支撐記憶軟木</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> 附贈皮革養護禮盒</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> 享 1 年原廠免費維修保固</li>
+                            </ul>
+                        </div>
+                        <button onclick="handlePurchase('旗艦極致系列')" class="w-full py-3.5 bg-brand-dark text-white font-medium rounded-full hover:bg-stone-800 transition shadow-lg">
+                            立即搶購限量款
+                        </button>
+                    </div>
+
+                    <!-- Pricing Plan 3 -->
+                    <div class="border border-stone-200 rounded-3xl p-8 bg-brand-cream/50 hover:border-stone-400 transition flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-brand-dark">全訂製高端訂製款</h3>
+                            <p class="text-xs text-stone-500 mt-1">獨立量腳・專屬色彩配置</p>
+                            <div class="my-6">
+                                <span class="text-3xl font-bold font-cinzel text-brand-dark">NT$ 8,200</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-stone-600 mb-8">
+                                <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> 一對一線上或實體量腳諮詢</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> 獨家皮色與金屬扣具自由搭配</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> 鞋底個人專屬手工刻字</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-amber-600 mr-2.5"></i> 終身皮革保養服務</li>
+                            </ul>
+                        </div>
+                        <button onclick="handlePurchase('高端訂製款')" class="w-full py-3 border-2 border-brand-dark text-brand-dark font-medium rounded-full hover:bg-brand-dark hover:text-white transition">
+                            預約專屬諮詢
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="py-20 bg-brand-cream">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-xs font-bold text-amber-700 tracking-widest uppercase">Loved by Creators</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mt-2">來自設計師與體驗者的真實聲音</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-8 bg-white rounded-2xl border border-stone-200 shadow-sm">
+                        <div class="text-amber-500 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-700 text-sm italic leading-relaxed mb-6">
+                            「身為建築師，我需要整天在工地與事務所之間穿梭。AURA 的鞋子不僅造型簡潔有力，腳底的支撐感更是令我驚艷！」
+                        </p>
+                        <div class="flex items-center space-x-3">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="User Avatar" class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <h4 class="text-sm font-bold text-brand-dark">Linus C.</h4>
+                                <p class="text-xs text-stone-500">資深建築設計師</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-8 bg-white rounded-2xl border border-stone-200 shadow-sm">
+                        <div class="text-amber-500 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-700 text-sm italic leading-relaxed mb-6">
+                            「皮質柔軟到第一次穿完全沒有磨腳期，視覺感非常拔尖，朋友看到都問在哪裡買的。完全物超所值！」
+                        </p>
+                        <div class="flex items-center space-x-3">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="User Avatar" class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <h4 class="text-sm font-bold text-brand-dark">Marcus H.</h4>
+                                <p class="text-xs text-stone-500">品牌視覺總監</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-8 bg-white rounded-2xl border border-stone-200 shadow-sm">
+                        <div class="text-amber-500 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-700 text-sm italic leading-relaxed mb-6">
+                            「包裝細緻度堪比國際精品，試穿 30 天的承諾讓我買得很安心。穿上它，連走路姿態都會不自主變挺拔。」
+                        </p>
+                        <div class="flex items-center space-x-3">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" alt="User Avatar" class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <h4 class="text-sm font-bold text-brand-dark">Sophie K.</h4>
+                                <p class="text-xs text-stone-500">時尚雜誌編輯</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-stone-900 text-white relative overflow-hidden">
+            <div class="max-w-5xl mx-auto px-6 md:px-12 text-center relative z-10">
+                <span class="text-xs font-bold text-amber-400 tracking-widest uppercase">Stay Inspired</span>
+                <h2 class="text-3xl sm:text-5xl font-bold mt-3 mb-6">開啟屬於您的美學足跡</h2>
+                <p class="text-stone-400 max-w-xl mx-auto text-sm sm:text-base leading-relaxed mb-8">
+                    訂閱 AURA 通訊，第一時間獲取每季獨家限量新款發表消息，並立即領取首購首折 NT$ 300 優惠券。
+                </p>
+
+                <!-- Email Input Form -->
+                <form onsubmit="handleSubscribe(event)" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+                    <input type="email" required placeholder="輸入您的 Email 信箱..." 
+                           class="px-6 py-4 rounded-full bg-stone-800 text-white placeholder-stone-500 border border-stone-700 focus:outline-none focus:border-amber-500 flex-grow text-sm">
+                    <button type="submit" class="px-8 py-4 bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold rounded-full transition text-sm whitespace-nowrap shadow-lg">
+                        立即訂閱
+                    </button>
+                </form>
+
+                <p class="text-xs text-stone-500 mt-4">我們尊重您的隱私，可隨時取消訂閱。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-brand-dark text-stone-400 py-16 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-10">
+            <!-- Brand Column -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-2">
+                    <span class="font-cinzel text-2xl font-bold text-white tracking-widest">AURA</span>
+                    <span class="text-xs tracking-tighter uppercase font-semibold text-brand-gold px-1.5 py-0.5 border border-brand-gold rounded">STUDIO</span>
+                </div>
+                <p class="text-xs leading-relaxed text-stone-400">
+                    設計感鞋款自創品牌。<br>以建築美學與極致工藝，陪伴您走過每個重要時刻。
+                </p>
+                <div class="flex space-x-4 text-stone-300 pt-2">
+                    <a href="#" class="hover:text-amber-400 transition" aria-label="Instagram"><i class="fa-brands fa-instagram text-lg"></i></a>
+                    <a href="#" class="hover:text-amber-400 transition" aria-label="Facebook"><i class="fa-brands fa-facebook text-lg"></i></a>
+                    <a href="#" class="hover:text-amber-400 transition" aria-label="Pinterest"><i class="fa-brands fa-pinterest text-lg"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-white text-sm font-bold mb-4 tracking-wider uppercase">品牌導覽</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#hero" class="hover:text-white transition">關於 AURA</a></li>
+                    <li><a href="#features" class="hover:text-white transition">工藝細節</a></li>
+                    <li><a href="#scenarios" class="hover:text-white transition">穿搭提案</a></li>
+                    <li><a href="#pricing" class="hover:text-white transition">限定方案</a></li>
+                </ul>
+            </div>
+
+            <!-- FAQ & Help -->
+            <div>
+                <h4 class="text-white text-sm font-bold mb-4 tracking-wider uppercase">顧客服務</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#" class="hover:text-white transition">尺寸對照指南</a></li>
+                    <li><a href="#" class="hover:text-white transition">30 天無憂退換貨政策</a></li>
+                    <li><a href="#" class="hover:text-white transition">皮革保養說明</a></li>
+                    <li><a href="#" class="hover:text-white transition">常見問題 FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h4 class="text-white text-sm font-bold mb-4 tracking-wider uppercase">聯絡我們</h4>
+                <ul class="space-y-2.5 text-xs">
+                    <li class="flex items-center"><i class="fa-solid fa-location-dot w-5 text-amber-500"></i> 台北市信義區松高路 88 號 12 樓</li>
+                    <li class="flex items-center"><i class="fa-solid fa-envelope w-5 text-amber-500"></i> service@aurashoes.com</li>
+                    <li class="flex items-center"><i class="fa-solid fa-phone w-5 text-amber-500"></i> (02) 2720-8888 (週一至週五 09:00-18:00)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 pt-12 mt-12 border-t border-stone-800 text-xs text-center text-stone-500 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>© 2026 AURA Studio. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-stone-400">隱私權條款</a>
+                <a href="#" class="hover:text-stone-400">服務條款</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Notification Toast Container -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-stone-900 text-white px-6 py-4 rounded-xl shadow-2xl transition transform translate-y-24 opacity-0 z-50 flex items-center space-x-3 border border-stone-700">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+        <span id="toast-message" class="text-sm font-medium">訊息內容</span>
+    </div>
+
+    <script>
+        // Toggle Mobile Navigation Menu
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        document.getElementById('menu-btn').addEventListener('click', toggleMenu);
+
+        // Scroll to Pricing section
+        function scrollToPricing() {
+            document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Show Custom Interactive Toast Notification
+        function showToast(message, isError = false) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastMsg.textContent = message;
+            if (isError) {
+                toastIcon.className = "fa-solid fa-circle-exclamation text-rose-400 text-lg";
+            } else {
+                toastIcon.className = "fa-solid fa-circle-check text-emerald-400 text-lg";
+            }
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3500);
+        }
+
+        // Handle Purchase Click
+        function handlePurchase(planName) {
+            showToast(`已成功選擇「${planName}」，正在為您跳轉至結帳頁面...`);
+        }
+
+        // Handle Newsletter Subscription Form
+        function handleSubscribe(event) {
+            event.preventDefault();
+            showToast("感謝您的訂閱！首購優惠碼已發送至您的信箱。");
+            event.target.reset();
+        }
+
+        // Simple Countdown Timer
+        function startCountdown() {
+            let totalSeconds = 86385; // ~23h 59m 45s
+            const countdownEl = document.getElementById('countdown');
+
+            setInterval(() => {
+                if (totalSeconds <= 0) return;
+                totalSeconds--;
+
+                const hrs = Math.floor(totalSeconds / 3600);
+                const mins = Math.floor((totalSeconds % 3600) / 60);
+                const secs = totalSeconds % 60;
+
+                countdownEl.textContent = 
+                    `${String(hrs).padStart(2, '0')} : ${String(mins).padStart(2, '0')} : ${String(secs).padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        // Scroll Navbar Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 40) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Initialize Timer on Load
+        window.onload = function() {
+            startCountdown();
+        };
+    </script>
+</body>
+</html>
